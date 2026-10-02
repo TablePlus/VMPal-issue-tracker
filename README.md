@@ -64,19 +64,12 @@ and imports your VMs from Parallels Desktop
 
 When a VM crashes, stops with an error or won't start, its log tells us why.
 
-1. In Finder, choose **Go › Go to Folder…** (⇧⌘G), paste `~/Library/Logs/VMPal` and press Return.
-2. Find the log named after your VM, such as `Windows 11.log`. If there's a `Windows 11.old.log` too, include it.
-3. Then either:
-   - **Attach it to your issue**: drag the `.log` file into the issue's comment box, or
-   - **Email it** to [nick@tableplus.com](mailto:nick@tableplus.com), with your issue's link or a few words on what happened.
+1. In VMPal, select the VM and choose **Help › Show Logs in Finder**. Finder opens with its log selected.
+2. Drag the log into your issue's comment box, or email it to [nick@tableplus.com](mailto:nick@tableplus.com) with your issue's link.
 
-A log can include your VM's name and the names of files and folders on your Mac. If you'd rather not post it publicly, email it.
+If VMPal or a VM quit unexpectedly, also choose **Help › Show Crash Reports in Finder**. Choose **File › Compress** in Finder and attach the `.zip`.
 
-Some problems have a log of their own. Please attach it as well:
-
-- **VMPal or a VM quit unexpectedly**: macOS keeps a crash report. Go to `~/Library/Logs/DiagnosticReports` the same way, select the files whose names start with `VMPal` from around that time, choose **File › Compress**, and attach the `.zip`.
-- **A Linux base OS didn't install**: go to `~/Library/Application Support/VMPal/Downloads/Linux` and attach `ubuntu-install.log` or `fedora-install.log`.
-- **VMPal Tools didn't install in Windows**: click **Show Log** in its installer, or open `C:\Windows\Temp\VMPal Tools.log`. Copy it to your Mac, for example through a shared folder, and attach it.
+A log can include your VM's name and the names of files on your Mac. If you'd rather not post it publicly, email it.
 
 <br>
 

@@ -36,9 +36,9 @@ labels: 'bug'
 <!--
 If a VM crashed, stopped with an error or won't start, please attach its log:
 
-1. In Finder, choose Go › Go to Folder… (⇧⌘G), paste ~/Library/Logs/VMPal and press Return.
-2. Drag the log named after your VM, such as "Windows 11.log", into this box.
+1. In VMPal, select the VM and choose Help › Show Logs in Finder.
+2. Drag the selected log into this box.
 
-Rather not post it publicly? Email it to nick@tableplus.com with this issue's link.
-VMPal or a VM quit unexpectedly? See "Sending us a log" in the README for the crash report.
+VMPal or a VM quit unexpectedly? Also choose Help › Show Crash Reports in Finder, then File › Compress, and attach the .zip.
+Rather not post them publicly? Email them to nick@tableplus.com with this issue's link.
 -->
