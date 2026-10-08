@@ -1,0 +1,32 @@
+name: NotePlus Hub
+
+on:
+  issues:
+    types: [opened, edited, closed, reopened]
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send to NotePlus Hub
+        env:
+          HOOK_URL: ${{ secrets.NOTEPLUS_HOOK_URL }}
+        run: |
+          jq '{
+            title: (
+              .repository.name + " #" +
+              (.issue.number | tostring) + ": " + .issue.title
+            ),
+            details: (
+              .sender.login + " · " + .action +
+              "\n\n" + (.issue.body // "")
+            ),
+            link: .issue.html_url
+          }' "$GITHUB_EVENT_PATH" > payload.json
+
+          curl --fail-with-body -sS --max-time 30 \
+            -H "Content-Type: application/json" \
+            -H "Idempotency-Key: issues-$GITHUB_RUN_ID" \
+            --data-binary @payload.json "$HOOK_URL"
